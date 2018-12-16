@@ -1,3 +1,4 @@
+# Connect Four AI player
 We made a connect 4 game which utilizes python's built in turtle objects to draw
 the board and various pieces on the board. Additionally, we created an ai which
 utilizes a mini-max algorithm optimized with alpha beta pruning to find the
@@ -10,7 +11,7 @@ best possible move based on a scoring system that evaluates a given new piece.
 AI playing yellow pieces exploring 5 moves in advance
 </p>
 
-# To Run
+## To Run
 Double click on our run.py, or run in the terminal directory
 
 ```
@@ -39,7 +40,7 @@ self.playerA = ['A', None, 'random', 7]
 self.playerB = ['B', None, 'random', 7]
 ```
 
-# Classes
+## Classes
 We made classes for each type of object that we use in our code. This includes
 a class for the board, graphics, ai, playon (a class which controls
 various aspects of the game) and run (a class which connect all the other
@@ -48,13 +49,13 @@ the whole program, and we made sure that our classes cover a more general case.
 These will enable us to make variations on things to use in other classes
 (e.g. created a new board in the ai class to test various moves on).
 
-# Testing
+## Testing
 We have two files that are not used within the program: check_winning_algorithm.py and
 check_ai_algorithm.py. While not utilized in the program itself, these files were used
 to test our endgame function and test that our ai evaluates the correct
 score in certain situations.
 
-# Suggestions
+## Suggestions
 For graphics, we could have made the game a little more flashy, or added
 additional features, but all of the necessities are there. When initialized, the
 board gives the user 3 options: (human vs. human, human vs. ai, and ai vs. ai).
