@@ -7,14 +7,14 @@ the board and various pieces on the board. Additionally, we created an ai which
 utilizes a mini-max algorithm optimized with alpha beta pruning to find the
 best possible move based on a scoring system that evaluates a given new piece.
 
+See [project requirements](Requirements.pdf)
+
 <p align="center">
 <img src="./AI_player.gif" alt="AI playing" width="500" />
 </p>
 <p align="center">
 AI playing yellow pieces exploring 5 moves in advance
 </p>
-
-See [project requirements](Requirements.pdf)
 
 ## To Run
 Double click on our run.py, or run in the terminal directory
