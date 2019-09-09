@@ -2,8 +2,9 @@
 This function tests that the ai makes the correct decision in given situations.
 '''
 
-import ai
 import grandcontroller
+
+import ai
 
 
 class CheckAI:

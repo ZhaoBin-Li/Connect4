@@ -18,28 +18,6 @@ Double click on our run.py, or run in the terminal directory
 python3 run.py
 ```
 
-To change the AI strength, edit the two lines below in the playon.py \_\_init__ section:
-
-```python
-#playerX = [name, AI or Human, smart or random AI, recursive depth]
-self.playerA = ['A', None, 'smart', 5]
-self.playerB = ['B', None, 'smart', 5]
-```
-
-To increase recursive depth (or "piles") to 7:
-```python
-#playerX = [name, AI or Human, smart or random AI, recursive depth]
-self.playerA = ['A', None, 'smart', 7]
-self.playerB = ['B', None, 'smart', 7]
-```
-
-To use random AI and not minimax AI:
-```python
-#playerX = [name, AI or Human, smart or random AI, recursive depth]
-self.playerA = ['A', None, 'random', 7]
-self.playerB = ['B', None, 'random', 7]
-```
-
 ## Classes
 We made classes for each type of object that we use in our code. This includes
 a class for the board, graphics, ai, playon (a class which controls
@@ -67,10 +45,26 @@ must click the actual space and not above or where another piece already is. If
 a player clicks an invalid spot a message will be put in the terminal, and the
 program will wait for a valid move. 
 
-# Issues
+## Issues
 Currently, our program does not have any known bugs, and the only issue that
 can occur is long waiting times when the ai is set to search more than 5 moves
 in advance. Therefore we will set the depth of the mini-max algorithm fairly
 low to 5 maintain a reasonable computation time.
 
+## Usage
 
+```
+usage: run.py [-h] [--ai-type MINIMAX or RANDOM]
+              [--ai-strength RECURSIVE DEPTH]
+
+Connect4 AI
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --ai-type MINIMAX or RANDOM
+                        smart (minimax) or random AI algorithm (default:
+                        smart)
+  --ai-strength RECURSIVE DEPTH
+                        (--ai-type=minimax only) algorithm search depth
+                        (default: 5)
+```

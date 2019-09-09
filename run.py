@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
 '''run game directly in terminal'''
+import argparse
+import turtle
 
+import ai
 import board
 import graphics
 import playon
-import ai
-import turtle
+
+parser = argparse.ArgumentParser(description='Connect4 AI',
+                                 formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+parser.add_argument('--ai-type', metavar='MINIMAX or RANDOM', default='smart',
+                    choices=['smart', 'random'], help='smart (minimax) or random AI algorithm')
+
+parser.add_argument('--ai-strength', metavar='RECURSIVE DEPTH', default=5, type=int,
+                    help='(--ai-type=minimax only) algorithm search depth')
 
 
 class Run:
@@ -38,7 +48,7 @@ class Run:
     2. Game ended, no input
     '''
 
-    def __init__(self):
+    def __init__(self, args):
         '''
         Initializes the game and creates objects of the classes we defined in other
         documents.
@@ -46,7 +56,7 @@ class Run:
         self.state = 0
         self.board = board.Board(self)
         self.graphics = graphics.Graphics(self)
-        self.playon = playon.PlayOn(self)
+        self.playon = playon.PlayOn(self, args.ai_type, args.ai_strength)
         self.ai = ai.AI(self)
 
         self.graphics.initialize_game()
@@ -59,7 +69,7 @@ class Run:
         '''
         x = int(x)
         y = int(y)
-        #self.state = 1
+        # self.state = 1
         if self.playon.no_input == False:
             if self.state == 0:
                 self.playon.set_players(x, y)
@@ -90,12 +100,14 @@ class Run:
                 self.board.initialize_board()
                 print('\nGame initialized\n')
 
+
 def main():
     '''
     This is the main function of our program. Here we initialize our GrandControl
     aka our event-driven programming which controls our turtle loop
     '''
-    controller = Run()  #run the game!
+    args = parser.parse_args()
+    controller = Run(args)  # run the game!
     print('Game started!\n')
     '''
     Testing using keyboard input

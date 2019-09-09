@@ -1,8 +1,9 @@
 '''
 Tests the determine win function.
 '''
-import grandcontroller
 import time
+
+import grandcontroller
 
 
 class CheckWin:

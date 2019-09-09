@@ -1,4 +1,5 @@
 import turtle
+
 '''turtle docs at https://docs.python.org/3/library/turtle.html'''
 
 
@@ -100,7 +101,7 @@ class Graphics:
         add piece to the screen
         '''
         self.thescreen.tracer(0, 0)
-        #Draw over the previous piece to remove inner circle outline
+        # Draw over the previous piece to remove inner circle outline
         if self.controller.board.get_previous_piece() != None:
             if self.controller.playon.get_who_is_playing() == 'A':
                 self.theturtle.fillcolor('yellow')
@@ -131,7 +132,7 @@ class Graphics:
         self.theturtle.circle(0.4)
         self.theturtle.end_fill()
 
-        #Draw inner circle outline
+        # Draw inner circle outline
         self.theturtle.up()
         self.theturtle.goto(x + 0.8, y + 0.5)
         self.theturtle.pencolor('black')

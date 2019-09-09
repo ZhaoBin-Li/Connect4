@@ -4,14 +4,14 @@ import random
 class PlayOn:
     '''Control interaction between players and determine scrore'''
 
-    def __init__(self, acontroller):
+    def __init__(self, acontroller, ai_type, search_depth):
         '''
         Player attributes:
         playerX = [name, AI or Human, smart or random AI, recursive depth]
         '''
         self.controller = acontroller
-        self.playerA = ['A', None, 'smart', 5]
-        self.playerB = ['B', None, 'smart', 5]
+        self.playerA = ['A', None, ai_type, search_depth]
+        self.playerB = ['B', None, ai_type, search_depth]
         self.who_is_playing = None
         self.winner = None
         self.no_input = False
@@ -75,11 +75,11 @@ class PlayOn:
         while self.who_is_playing[1] == 'AI':
             print('AI Thinking...')
             self.controller.graphics.display_bottom('AI Thinking...')
-            self.no_input = True  #prevent input when ai is thinking
+            self.no_input = True  # prevent input when ai is thinking
             if self.who_is_playing[2] == 'smart':
                 x, y = self.controller.ai.make_decision_smart(
                     self.who_is_playing[3])
-            else:  #ai is random
+            else:  # ai is random
                 x, y = self.controller.ai.make_decision_random()
             self.no_input = False
             print("AI's move is {}, {}.\n".format(x, y))

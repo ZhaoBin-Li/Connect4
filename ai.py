@@ -1,4 +1,5 @@
 import random
+
 import board
 
 
@@ -370,7 +371,7 @@ class AI:
             for a_dirtn in self.directions_coords.copy()[dirtns]:
                 self.connections_dirtn[
                     dirtns] += self.possible_win_in_a_dirctn(
-                        a_dirtn, self.player, apiece)
+                    a_dirtn, self.player, apiece)
             if self.connections_dirtn[dirtns] < 3:
                 del self.directions_coords[dirtns]
 
